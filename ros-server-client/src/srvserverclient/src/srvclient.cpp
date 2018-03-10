@@ -1,19 +1,19 @@
 #include "ros/ros.h"
-#include "srvserver/srvcomm.h"
+#include "srvserverclient/srvcomm.h"
 
 class MCClient
 {
 public:
   MCClient(ros::NodeHandle& nh)
     {
-        mc_cllient_ = nh.serviceClient<srvserver::srvcomm>("mc_command");
+        mc_cllient_ = nh.serviceClient<srvserverclient::srvcomm>("mc_command");
     }
 
     void start(const std::string& init)
     {
         ROS_INFO("Attempting to initialize motor controller");        
         // mc command
-        srvserver::srvcomm srv;
+        srvserverclient::srvcomm srv;
 
         // Using Parameter to request
         srv.request.command = init;
@@ -37,7 +37,14 @@ int main(int argc, char **argv)
 {
     std::string init;
 
-    ros::init(argc, argv, "srvserver");
+    ros::init(argc, argv, "mc_command_client");
+
+    if (argc > 1)
+    {
+        ROS_INFO("Usage: mc_command (ex: start, stop, forward, backward)");
+        return 1;
+    }
+
     ros::NodeHandle nh;
 
     // Private Node Handle

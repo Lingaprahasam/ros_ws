@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(srvserver)
+project(srvserverclient)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
@@ -36,6 +36,8 @@ find_package(catkin REQUIRED)
 ##   * add "message_generation" and every package in MSG_DEP_SET to
 find_package(catkin REQUIRED COMPONENTS 
     roscpp
+    rospy
+    std_msgs
     message_generation
 )
 ##   * add "message_runtime" and every package in MSG_DEP_SET to
@@ -68,7 +70,8 @@ add_service_files(
 ## Generate added messages and services with any dependencies listed here
 generate_messages(
    DEPENDENCIES
-   std_msgs  # Or other packages containing msgs
+   std_msgs  
+   # Or other packages containing msgs
 )
 
 ################################################
@@ -105,6 +108,7 @@ catkin_package(
 #  LIBRARIES srvserver
   CATKIN_DEPENDS 
   roscpp
+  rospy
 #  DEPENDS system_lib
 )
 

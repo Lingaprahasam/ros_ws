@@ -38,7 +38,9 @@
                 "/opt/ros/kinetic/include",
                 "/opt/ros/kinetic/include/std_msgs",
                 "${workspaceRoot}/devel/include",
-                "${workspaceRoot}/devel/include/srvserver"
+                "${workspaceRoot}/devel/include/srvserver",
+                "${workspaceRoot}/devel/include/srvserverclient",
+                "${workspaceRoot}/ros-server-client/devel/include"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",
