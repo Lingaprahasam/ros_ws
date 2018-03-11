@@ -1,0 +1,11 @@
+<launch>
+
+<!-- Launch server Nodes -->
+<node name="srvserver" pkg="srvserverclient" type="srvserver.py" />
+
+<!-- Launch client Nodes -->
+<node name="srvclient" pkg="srvserverclient" type="srvclient" output="screen">
+    <param name="mc_command" value="init"/>
+</node>
+
+</launch>

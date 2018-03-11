@@ -40,7 +40,8 @@
                 "${workspaceRoot}/devel/include",
                 "${workspaceRoot}/devel/include/srvserver",
                 "${workspaceRoot}/devel/include/srvserverclient",
-                "${workspaceRoot}/ros-server-client/devel/include"
+                "${workspaceRoot}/ros-server-client/devel/include",
+                "${workspaceRoot}/ros-beginner-tutorial/devel/include"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",

@@ -1,5 +1,6 @@
 #request
 string command
+# int64 command
 ---
 #response
 bool ack

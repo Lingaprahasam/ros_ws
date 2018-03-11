@@ -27,6 +27,25 @@ public:
         ROS_INFO_STREAM("motor controller initialized: " << srv.response);
     }
 
+    // For num type command
+    // void start(const int& init)
+    // {
+    //     ROS_INFO("Attempting to initialize motor controller");        
+    //     // mc command
+    //     srvserverclient::srvcomm srv;
+
+    //     // Using Parameter to request
+    //     // srv.request.command = init;
+    //     srv.request.command = 0;
+    //     ROS_INFO_STREAM("Requesting init of motor controller: " << init);
+
+    //     if (!mc_cllient_.call(srv))
+    //     {
+    //         ROS_ERROR("Could not initialize motor controller");
+    //         return;
+    //     }
+    //     ROS_INFO_STREAM("motor controller initialized: " << srv.response);
+    // }
 
 private:
     // Planning components
@@ -39,7 +58,7 @@ int main(int argc, char **argv)
 
     ros::init(argc, argv, "mc_command_client");
 
-    if (argc > 1)
+    if (argc != 2)
     {
         ROS_INFO("Usage: mc_command (ex: start, stop, forward, backward)");
         return 1;
@@ -52,8 +71,8 @@ int main(int argc, char **argv)
 
     // parameter name, string object reference, default value
     private_node_handle.param<std::string>("mc_command", init, "init"); 
-
-    ROS_INFO("srvserver node has been initialized");
+    
+    ROS_INFO("srvclient node has been initialized");
 
     MCClient app(nh);    
 

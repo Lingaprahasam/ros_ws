@@ -200,12 +200,12 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(srvserverclient
+add_executable(srvclient
   src/srvclient.cpp
 )
 
-add_dependencies(srvserverclient ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(srvclient ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-target_link_libraries(srvserverclient
+target_link_libraries(srvclient
   ${catkin_LIBRARIES}
 )
