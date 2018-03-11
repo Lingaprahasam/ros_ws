@@ -15,16 +15,6 @@ def mc_invalid():
     print "command invalid on mc_command server"
     return srvcommResponse(False)
 
-def mc_command_handler():
-    # switch = {
-    #     'init' : mc_init,
-    #     'start': mc_start,   
-    #     # 'default': mc_invalid
-    # }
-    
-    # switch[arg]
-    return srvcommResponse(False)
-
 def handle_mc_commands(req):
     switcher = {
         'init': mc_init,
